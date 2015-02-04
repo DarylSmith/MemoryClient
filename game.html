@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /><title>
+	Memory
+
+</title>
+<link rel="stylesheet" href="CSS/jquery.mobile-1.0.1.min.css" />
+<link rel="stylesheet" href="CSS/styles.css" type="text/css" />
+<script src="phonegap.js"></script>
+<script type="text/javascript"  src="Scripts/UploadHelper.js"></script>
+<script src="Scripts/jQuery-1.7.1.js"></script>
+<script type="text/javascript" src="Scripts/main.js"></script>
+<script src="Scripts/jQuery-Mobile-v1.0.1.js"></script>
+<script src="Scripts/transitions.js"></script>
+<script type="text/javascript" src="Scripts/Memory.js"></script>
+<script type="text/javascript" src="Scripts/MemoryUI.js"></script>
+<script type="text/javascript" src="Scripts/MemoryData.js"></script>
+
+
+
+
+<script type="text/javascript">
+//window.device= {'uuid':'daryl1976@gmail.com'};
+
+
+</script>
+
+
+</head>
+
+<body>
+ <div data-role="page" id="menu" class="MenuPage-Cont">
+ <div id="main-screen">
+ <div class="button-container">
+ <div class="menu-item" id="lnkBeginner">
+ <a href="javascript:selectNewGame('beginner');">
+   <img src="Images/beginnersgame.png"/>
+ </a>
+ </div>
+ 
+ <div class="menu-item" id="lnkAdvanced">
+  <a href="javascript:selectNewGame('advanced');">
+    <img src="Images/advancedgame.png"/>
+ </a>
+ </div>
+ 
+ <div class="menu-item" id="lnkUploadPhotos">
+  <a href="javascript:;" class="photo-link">
+  <img src="Images/uploadphotos.png"/>
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="arrow_box splashpagebox" >
+  <a href="javascript:prepareGame('OnePlayer');">
+<span class="logo"><img src="Images/oneplayerbutton.png" alt="One Player"/></span>
+</a>
+  <a href="javascript:prepareGame('TwoPlayer');">
+<span class="logo"><img src="Images/twoplayerbutton.png" alt="One Player"/></span>
+</a>
+</div>
+
+ 
+ </div>
+            
+<div data-role="page" id="main" class="GamePage-Cont">
+<div class="GamePage">
+<div data-role="header" data-position="inline">
+	<a   class="start-game" >New Game</a>
+	<h1> </h1>
+	<a  id="lnkUploadPhotos" class="photo-link" >Add your own photos!</a>
+</div>
+<div data-role="content"> 
+<div id="counter-container">
+<div id="counter" class="scoreboard" data-player-id="0">
+<div id="clock-bg">
+<span class="flipCount twoplayer tp-1" id="count0"></span>
+<span class="flipCount twoplayer tp-0" id="count1"></span>
+<span class="flipCount" id="colon">:</span>
+<span class="flipCount" id="count2"></span>
+<span class="flipCount" id="count3"></span>
+</div>
+</div>
+<div id="highscore" class="scoreboard" data-player-id="1">
+<div id="highscore-bg">
+<span class="hs-flipCount twoplayer hs-tp-1" id="hs-count0"></span>
+<span class="hs-flipCount twoplayer hs-tp-0" id="hs-count1"></span>
+<span class="hs-flipCount" id="hs-colon">:</span>
+<span class="hs-flipCount" id="hs-count2"></span>
+<span class="hs-flipCount" id="hs-count3"></span>
+</div>
+</div>
+</div>
+
+<div id="table">
+
+</div>
+<div class="border-bottom"></div>
+
+
+
+<div id="monster"></div>
+<div class="arrow_box" >
+
+
+<span class="logo"  id="start"><a href="javascript;" class="start-game">Start Game</a></span>
+<span class="logo" style="display:none" id="mark">On Your Mark</span>
+<span class="logo" style="display:none" id="set">Get Set</span>
+<span class="logo" style="display:none"  id="go">Go!</span>
+</div>
+
+<div id="stopwatch"></div>
+<a  id="link-username" data-rel="dialog" data-transition="pop" href="#userName"></a>
+</div>
+</div>
+</div>
+
+
+
+            
+          
+</body>
+</html>

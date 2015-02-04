@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /><title>
+	
+	Photo List
+
+</title><link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+<link rel="stylesheet" href="CSS/styles.css" type="text/css" />
+
+<script type="text/javascript" src="Scripts/main.js"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+
+<script type="text/javascript" src="Scripts/Memory.js"></script>
+<script type="text/javascript" src="Scripts/MemoryUI.js"></script>
+
+<script type="text/javascript" src="Scripts/MemoryData.js"></script>
+
+
+
+
+</head>
+
+<body>
+ 
+            
+
+<div data-role="page" id="list">
+<div data-role="header" data-position="inline">
+	<a href="game.html?reload" data-transition="slide" data-icon="refresh" data-theme="b">Back</a>
+	<h1>Memory</h1>
+	
+</div>
+    <div data-role="content"> 
+<script type="text/javascript">
+
+  
+  
+
+    function validateUpload() {
+        var strError = '';
+        var regexName = /[^A-Za-z0-9\s-]/;
+        var regexPhoto = /.*(jpg|JPG|png|PNG|gif|GIF|BMP|bmp)$/;
+        var myName = $('#name').val();
+        var myPhoto = $('#file').val();
+        if(myName.match(regexName)!=null || myName.length==0) {
+           
+        strError+='Please enter a valid name\n';
+		alert(strError);
+		$("#name").css('background-color','#FFFF66').focus();
+		return false;
+		
+        }
+        if (myPhoto.match(regexPhoto)==null || myPhoto.match(regexPhoto).length==0) {
+            strError += 'Valid images only: jpg,png,gif or bmp';
+
+        }
+        if (strError.length>1)
+        {
+        alert(strError);
+        return false;
+        }
+
+    }
+
+</script>
+
+ <ul data-role="listview" class="list-of-items" data-theme="b">
+	<li> 
+    <a  class="photo-items" data-rel="dialog" data-transition="pop"  href="Upload.html?index=1">Photo 1</a>
+    </li>
+	<li>
+    <a class="photo-items" data-rel="dialog" data-transition="pop"   href="Upload.html?index=2">Photo 2</a>
+    </li>
+	<li>
+    <a  class="photo-items" data-rel="dialog" data-transition="pop"   href="Upload.html?index=3">Photo 3</a>
+    </li>
+	<li><a  class="photo-items" data-rel="dialog" data-transition="pop" href="Upload.html?index=4">Photo 4</a></li>
+	<li><a  class="photo-items" data-rel="dialog"  data-transition="pop" href="Upload.html?index=5">Photo 5</a></li>
+	<li><a  class="photo-items" data-rel="dialog" data-transition="pop"  href="Upload.html?index=6">Photo 6</a></li>
+	<li><a class="photo-items" data-rel="dialog" data-transition="pop"  href="Upload.html?index=7">Photo 7</a></li>
+	<li><a  class="photo-items" data-rel="dialog" data-transition="pop"  href="Upload.html?index=8">Photo 8</a></li>
+	
+</ul>
+
+</div>
+</div>
+
+
+
+          
+</body>
+</html>

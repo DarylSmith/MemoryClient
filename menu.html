@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /><title>
+	Memory
+
+</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<link rel="stylesheet" href="CSS/styles.css" type="text/css" />
+<link rel="stylesheet" href="CSS/base64images.css" type="text/css" />
+<style>
+.ui-content
+{padding:0px;}
+</style>
+<script src="Scripts/jQuery-1.7.1.js"></script>
+
+
+
+
+
+<script src="Scripts/jQuery-Mobile-v1.0.1.js"></script>
+
+
+<script src="Scripts/MemoryData.js"></script>
+
+
+
+<script type="text/javascript">
+var divWidth=320;
+var passline=0;
+function getRand()
+		{
+		
+		var rand = Math.floor((Math.random()*24)+1);
+		return rand>12?rand-(rand+(rand/2)):rand;
+		
+			
+		}
+		
+		
+function rotateStyle()
+		{
+		var rand = Math.floor((Math.random()*24)+1);
+		rand= rand>12?rand-(rand+(rand/2)):rand;
+		return "-webkit-transform:rotate("+rand+"deg);-moz-transform:rotate("+rand+"deg);transform:rotate("+rand+"deg);";
+			
+		}
+		
+$(document).on('pagehide','#menu',function(){
+										   
+	window.clearInterval('menuAnimation');
+										 
+										   });
+$(document).on('pageshow','#menu',function(){
+				 
+				var canvas = "";
+		canvas += "<div class='line' style='width:"+divWidth+";height:20px;overflow:hidden' id='row'>";	
+	
+		     for(x=0;x<6;x++)
+			 	{
+			canvas += "<img src='Images/clothespin.png' style='bottom:"+x+"px;left:0px' class='clothespin hangdry' />";	   
+					
+				}
+	
+		canvas+="</div><div style='clear:both'></div><div class='card-container'>";
+		
+				
+				
+					//load cards from memory
+				
+					var mem = new MemoryData();
+					var cards = mem.selectDefaultCards();
+					var z=12;
+	   					for (i=0;i<6;i++)
+	   					{
+							
+							//check if this card has been loaded into storage
+							var c= window.localStorage.getItem('MemoryCard' + i);
+							if(c!=null)
+								{
+									//if exists assign it to the array
+									cards[i].Name='b64' + i;
+									cards[i].Url=c;
+									
+									//add it to canvas string
+									
+									
+								}
+								
+			myCards=cards;
+			 canvas += "<div class='hangdry car-wrapper card-flip' style='"+rotateStyle()+"bottom:"+z+"px;left:0px;z-index:100000'><div class='inGame car-cont' style='background-image:url("+ cards[i].Url +");'></div></div>";
+						
+						z--;
+						}
+				
+				canvas+="</div>";
+					$(".menu-container").append(canvas);					  
+										  });
+
+//add animation loop
+
+	var menuAnimation = window.setInterval(function(){ 
+												
+												
+												
+												$(".hangdry").each(function(){
+																				
+												var x = parseInt($(this).css('left').replace('px',''))+2;
+												var z = parseInt($(this).css('bottom').replace('px',''));
+												var y= $(this).position();
+												 $(this).css({'left': x +'px'});
+												
+												 //lower the item against the clothesline (it's slanted)
+													if(x%50==0)
+													{
+														$(this).css({'bottom': (z-1)+'px'});
+													}
+												  
+													if(y.left>=divWidth && passline==false)
+													{
+														//only one card gets returned per loop
+														passline=true;
+														var rand = getRand();
+														var newbottom = $(this).hasClass("car-wrapper")?10:7;
+														$(this).css({'left': '-'+divWidth+'px','bottom':newbottom + 'px'});
+														if ($(this).hasClass("car-wrapper"))
+														{
+															$(this).css({'-webkit-transform':'rotate('+rand+'deg)','-moz-transform':'rotate('+rand+'deg)','transform':'rotate('+rand+'deg)'});
+															divWidth++;
+														}
+													
+															 
+												
+													
+													
+													} passline=false;	})},5);
+	
+	
+
+
+
+</script>
+
+
+</head>
+
+<body>
+ 
+            
+
+<div data-role="page" id="menu">
+
+    <div data-role="content"> 
+    
+    
+    		<div class="menu-container">
+    </div>
+    <a href="game.html?reload=true">
+    <div class="gamestart"></div>
+	</a>
+
+    <div 
+
+    </div>
+	
+
+
+</div>
+
+            
+          
+</body>
+</html>

@@ -1,0 +1,476 @@
+
+
+.GamePage-Cont,.MenuPage-Cont,.photo-list
+{
+background: url(../Images/Background_plain.png) no-repeat #b2f7f7;	
+}
+
+#main .ui-content
+{
+	padding-left:0px !important;
+	padding-right:0px !important;
+	
+}
+
+.player-one
+{
+	background-image: url(../Images/playeroneimage.png) !important;	
+	
+	margin-right:6%;	
+	
+}
+
+/* Home Screen Elements */
+.menu-item
+{
+	width:285px;	
+}
+
+#lnkBeginner 
+{
+	margin:25% auto 15% auto;	
+}
+
+#lnkAdvanced
+{
+	margin:0 auto 15% auto;	
+}
+
+#lnkUploadPhotos
+{
+	margin:0 auto 0 auto;	
+}
+
+/* Game  Elements */
+
+.GamePage #table
+{
+	width:90%;
+	margin:0 auto;
+	
+}
+
+.car-wrapper
+{
+	float: left;
+	height: 67px;
+	width: 67px;
+	position:relative;
+	background-image:url(../Images/card_bg.png);
+}
+
+
+
+/*set  card margins for small screens */
+@media screen and (min-width: 321px){
+.car-wrapper
+{
+	margin: 2.5% 1%;
+}
+
+.beginner .car-cont
+{
+	height: 95px;
+	width: 96px;
+	background-image:url(../Images/postcard_beginner_largescreen.png);
+	
+}
+
+.beginner .car-wrapper 
+{
+	float: left;
+	height: 84px;
+	width: 83px;
+	position:relative;
+	background-image:url(../Images/card_bg_largescreen.png);
+}
+
+.beginner .car-cont img
+{
+	height:86px;
+	width:86px;	
+	margin:4px;
+}
+
+}
+
+@media screen and (max-width: 320px){
+.car-wrapper
+{
+	margin:0px;
+}
+
+.beginner .car-cont
+{
+	height: 77px;
+	width: 78px;
+	background-image:url(../Images/postcard_beginner.png);
+	
+}
+
+.beginner .car-cont img
+{
+	height: 68px;
+	margin: 6px;
+	width: 66px;
+}
+
+.flipCount,.hs-flipCount
+{
+
+	font-size:1.2em !important;
+}
+#counter-container
+{
+	margin-left:3% !important;
+}
+
+
+}
+
+
+.car-cont
+{
+	background-repeat: no-repeat;
+	cursor: pointer;
+	height: 57px;
+	margin-left:3px;
+	width: 58px;
+	background-color:#ffffff;
+	background-image:url(../Images/postcard.png);
+	background-repeat:no-repeat;
+	overflow:hidden;
+	border-radius:16%;
+	
+}
+
+
+.car-cont img
+{
+	height:52px;
+	width:52px;
+	margin:3px;
+}
+
+.beginner .car-wrapper
+{
+	margin:2% 3%;
+}
+
+
+.beginner .arrow_box
+{
+	bottom:356px;
+}
+
+.target-image
+{
+	display:none;	
+}
+
+#counter-container
+{
+   margin-left:9%;
+	
+}
+
+#counter
+{
+	
+	background: url(../Images/timer_new.png) no-repeat transparent;
+	width:42%;
+	height:47px;
+	visibility:hidden;
+	float:left;
+	
+}
+
+
+
+#highscore
+{
+	
+	background: url(../Images/highscore2.png) no-repeat transparent;
+	width:48%;
+	height:47px;
+	float:left;
+	visibility:hidden;
+	
+}
+
+.player-two
+{
+	background: url(../Images/playertwoimage.png) no-repeat transparent !important;	
+	width:40% !important;
+	
+	
+	
+	
+}
+
+#clock-bg,#highscore-bg
+{
+	background-color:#e6c594;
+	border-radius:11%;
+	float:right;
+	height:83%;
+	margin-top:5%;
+	padding:0px 5px;
+	
+}
+
+.flipCount,.hs-flipCount
+{
+	display:inline-block;
+	margin-top:4%;
+	font-weight: bold;
+	font-size:1.5em;
+	
+	font-family:'Arial Black', Gadget, sans-serif;
+	text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;  
+	
+	
+}
+
+#count0,#hs-count0
+{
+
+	color:#d8831f;
+	
+}
+#count1,#hs-count1
+{
+ color:#1ff041;
+}
+
+#count2,#hs-count2
+{
+	color:#f0e51f;
+}
+
+#count3,#colon,#hs-count3
+{
+	color:#d81f1f;
+}
+
+.firstPick,.secondPick
+{
+	position: relative;
+	z-index: 1000;
+	background-image:none !important;
+}
+#caller
+{
+	position: relative;
+	top: 200px;
+}
+
+
+
+
+.car-clear
+{
+clear:both;
+height:8px;
+	
+}
+.card-flip
+{
+	background-color:#ffffff;
+	background-repeat:no-repeat;
+
+		
+}
+
+
+.arrow_box {
+    background-color: transparent;
+    background-image: url("../Images/popupwrapper.png");
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 15px 15px;
+    bottom: 459px;
+    color: #FFFFFF;
+    font-family: Helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    height: 192px;
+     padding-top: 118px;
+    position: absolute;
+	top:30%;
+	left:7%;
+    text-align: center;
+    width: 275px;
+    z-index: 1000;
+	
+	
+}
+
+
+.splashpagebox
+{
+
+	padding-top:106px !important;
+	display:none;
+	
+}
+
+.hooraybox
+{
+ background-image: url("../Images/popupwrapper_hooray.png") !important;	
+}
+
+.topscorebox
+{
+	 background-image: url("../Images/popupwrapper_topscore.png") !important;	
+}
+
+
+.logo a
+{
+text-decoration:none;	
+}
+
+.congratulations
+{
+font-size:1.5em !important;	
+
+}
+
+.logo
+{
+	 font-size: 20px;
+	
+    font-weight: bold;
+	font-family:Arial, Helvetica, sans-serif;
+   
+}
+
+
+.clear
+{
+	clear:both;
+}
+
+
+.ajax-loader
+{
+display:none;
+position:absolute;
+z-index:1000;
+top:32%;
+left:50%;
+}
+
+.line
+{
+float:left;
+position:relative;
+background-image:url(../Images/line.png);
+background-repeat:no-repeat;
+width:320px;
+height:20px;
+}
+
+
+/*Styles for photo list */
+.List-Thumb{float:left;height:30px;margin:0px 10px 0px 0px;}
+
+.upload-text,.ui-input-text{font-family:Helvetica,Arial,sans-serif;  font-weight:bold !important;}
+
+
+#userName .ui-header a {
+	display: none;
+}
+
+.list-of-items a
+{
+height:63px;
+width:301px;
+margin:4px 0px 4px 10px;
+background-repeat:no-repeat;
+display:block;
+padding-left:44px;
+padding-top:13px;
+-webkit-text-stroke: 1px #000;
+-webkit-text-fill-color: transparent;
+color:#000 !important;
+text-shadow:none !important;
+}
+
+.button-container
+{
+	min-height: 640px;
+ 	padding-top: 25%;	
+	
+}
+
+
+.custom-overlay {
+    background-color: #CCCCCC !important;
+    background-image: none;
+    opacity: 0.2 !important;
+    z-index: 1040;
+}
+
+
+#list .img1
+{
+background-image:url(../Images/upload1.png);
+color:#c11a1b;
+}
+#list .img2
+{
+background-image:url(../Images/upload2.png);	
+}
+#list .img3
+{
+background-image:url(../Images/upload3.png);	
+}
+#list .img4
+{
+background-image:url(../Images/upload4.png);	
+}
+#list .img5
+{
+background-image:url(../Images/upload5.png);	
+}
+
+#list .img6
+{
+background-image:url(../Images/upload6.png);	
+}
+
+#list .img7
+{
+background-image:url(../Images/upload7.png);	
+}
+#list .img8
+{
+background-image:url(../Images/upload8.png);	
+}
+#list .img9
+{
+background-image:url(../Images/upload9.png);	
+}
+
+#list .img10
+{
+background-image:url(../Images/upload10.png);	
+}
+
+/* jqm css overrides */
+
+.ui-btn-corner-all {border-radius:0px 0px 0px 0px !important;}
+.ui-btn{background:#474747 repeat scroll 0 0 #474747!important; min-width:46%}
+
+.back-to-game {
+    float: left;
+    height: 39px;
+    margin-left: 6%;
+    vertical-align: middle;
+}	
+	

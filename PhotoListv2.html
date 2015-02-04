@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" /><title>
+	
+	Photo List
+
+</title><link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+<script src="Scripts/jQuery-1.7.1.js"></script>
+<link rel="stylesheet" href="CSS/styles.css" type="text/css" />
+<!--<script type="text/javascript"  src="Scripts/phonegap_shim.js"></script>-->
+<script type="text/javascript"  src="Scripts/UploadHelper.js"></script>
+<script type="text/javascript" src="Scripts/main.js"></script>
+<script src="Scripts/jQuery-Mobile-v1.0.1.js"></script>
+<script src="http://debug.phonegap.com/target/target-script-min.js#familymemory"></script>
+<script type="text/javascript" src="Scripts/Memory.js"></script>
+<script type="text/javascript" src="Scripts/MemoryUI.js"></script>
+
+<script type="text/javascript" src="Scripts/MemoryData.js"></script>
+
+
+</head>
+
+<body>
+ 
+            
+
+<div data-role="page" class="photo-list"  id="list">
+<div data-role="header" data-position="inline">
+	<img  class="back-to-game" src="Images/back.png"/>
+	<h1>Add Photos</h1>
+	
+</div>
+    <div data-role="content"> 
+    <div class="ajax-loader">
+    <img src="Images/ajax-loader.gif"/>
+    </div>
+ <div class="list-of-items">
+	<div class="photo-cont"> 
+    <a  class="photo-items img1"  onclick="return getImage(0);" ></a>
+    </div>
+	<div class="photo-cont">
+    <a class="photo-items img2"  onclick="return getImage(1);"></a>
+    </div>
+	<div class="photo-cont">
+    <a  class="photo-items img3" onclick="return getImage(2);" ></a>
+    </div>
+	<div class="photo-cont"><a  class="photo-items img4"  onclick="return getImage(3);"></a></div>
+	<div class="photo-cont"><a  class="photo-items img5"  onclick="return getImage(4);"></a></div>
+	<div class="photo-cont"><a  class="photo-items img6"  onclick="return getImage(5);"></a></div>
+	<div class="photo-cont"><a class="photo-items img7" onclick="return getImage(6);" ></a></div>
+	
+    <div class="photo-cont"><a  class="photo-items img8"  onclick="return getImage(7);"    ></a></div>
+    <div class="photo-cont"><a  class="photo-items img9"  onclick="return getImage(8);"    ></a></div>
+    <div class="photo-cont"><a  class="photo-items img10" id="photo-10" onclick="return getImage(9);"    ></a></div>
+	
+</div>
+
+</div>
+</div>
+
+
+
+          
+</body>
+</html>

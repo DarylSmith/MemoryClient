@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="CSS/styles.css" type="text/css" />
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/javascript" src="Scripts/Memory.js"></script>
+<script type="text/javascript" src="Scripts/MemoryUI.js"></script>
+<script type="text/javascript" src="Scripts/MemoryData.js"></script>
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script type="text/javascript">
+
+  
+  
+
+    function validateUpload() {
+        var strError = '';
+        var regexName = /[^A-Za-z0-9\s-]/;
+        var regexPhoto = /.*(jpg|JPG|png|PNG|gif|GIF|BMP|bmp)$/;
+        var myName = $('#name').val();
+        var myPhoto = $('#file').val();
+      if(myName.match(regexName)!=null || myName.length==0) {
+           
+        strError+='Please enter a valid name\n';
+		alert(strError);
+		$("#name").css('background-color','#FFFF66').focus();
+		return false;
+		
+        }
+        if (myPhoto.match(regexPhoto)==null || myPhoto.match(regexPhoto).length==0) {
+            strError += 'Valid images only: jpg,png,gif or bmp';
+
+        }
+        if (strError.length>1)
+        {
+        alert(strError);
+        return false;
+        }
+
+    }
+
+</script>
+
+</head>
+
+<body>
+<div data-role="page" id="upload">
+<div data-role="header" data-position="inline">
+	
+	<h1>Upload Photos</h1>
+	
+</div>
+    <div data-role="content"> 
+    	
+<div class="UploadContainer"></div>
+  <div class="upload-text">
+    <form action="http://localhost:50092/api/UploadPhoto" onsubmit="return validateUpload();" data-ajax="false" enctype="multipart/form-data" method="post">
+     <label for="file" >Choose a Person</label>
+    <input class="upload-text" style="margin-left:27px" type="file" id="file" name="file"  /><br />
+    <label for="name" >Give 'em a name</label>
+     <input type="text" id="name" name="name"  />
+      <input type="hidden" class="user-field" name="user" id="user" value="" />
+     <input type="hidden" class="index-field" name="index" id="index" value="" />
+    <input type="submit" class="upload-text" value="submit" />
+</form>
+    </div>
+	
+
+</div>
+</div>
+
+</body>
+</html>
